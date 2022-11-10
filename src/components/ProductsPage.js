@@ -3,6 +3,9 @@ import jsonData from '../../src/data.json';
 import Table from 'react-bootstrap/Table';
 import ProductTable from './ProductTable';
 import SearchBar from './SearchBar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import Form from 'react-bootstrap/Form';
 
@@ -19,13 +22,23 @@ function ProductsPage() {
   return (
     <div>
       <h1>IronStore</h1>
+      <Container>
+        <Row>
+          <Col sm={8}>
+            <SearchBar setKeyWord={setKeyWord} keyWord={keyWord} />
+          </Col>
+          <Col sm={4}>
+            <Form.Group className="mb-3">
+              <Form.Check
+                label="Only show products in stock"
+                onClick={handleStockOption}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+      </Container>
 
-      <SearchBar setKeyWord={setKeyWord} keyWord={keyWord} />
-      <Form.Check
-        label="Only show products in stock"
-        onClick={handleStockOption}
-      />
-      <Table striped bordered hover size="sm">
+      <Table striped bordered hover size="sm" variant="dark">
         <thead>
           <tr>
             <th>name</th>
