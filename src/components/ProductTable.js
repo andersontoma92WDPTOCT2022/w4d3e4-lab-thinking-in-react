@@ -1,7 +1,9 @@
 function ProductTable({ produto }) {
   return (
     <tr>
-      <td>{produto.name}</td>
+      <td style={produto.inStock ? { color: 'black' } : { color: 'red' }}>
+        {produto.name}
+      </td>
       <td>{produto.price}</td>
       <td>{produto.category}</td>
       <td>{produto.inStock ? 'em estoque' : 'fora de estoque'}</td>
