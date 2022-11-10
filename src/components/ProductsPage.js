@@ -20,7 +20,7 @@ function ProductsPage() {
   }
 
   return (
-    <div>
+    <div class="p-3 mb-2 bg-secondary text-white">
       <h1>IronStore</h1>
       <Container>
         <Row>
